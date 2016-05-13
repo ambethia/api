@@ -1,0 +1,11 @@
+{
+  "private": true,
+  "scripts": {
+    "migrate": "psql -f schema.sql",
+    "reverse": "psql -c 'drop schema if exists ambethia'",
+    "start": "postgraphql $POSTGRES_URL --schema ambethia"
+  },
+  "dependencies": {
+    "postgraphql": "^1.3.0"
+  }
+}
