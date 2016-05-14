@@ -2,7 +2,7 @@
   "private": true,
   "scripts": {
     "prestart": "exodus migrate",
-    "start": "postgraphql $DATABASE_URL --schema ambethia"
+    "start": "postgraphql $DATABASE_URL --schema ambethia --hostname 0.0.0.0"
   },
   "dependencies": {
     "exodusjs": "^2.0.4",
