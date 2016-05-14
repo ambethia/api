@@ -1,11 +1,14 @@
 {
   "private": true,
   "scripts": {
-    "migrate": "psql -f schema.sql",
-    "reverse": "psql -c 'drop schema if exists ambethia'",
-    "start": "postgraphql $POSTGRES_URL --schema ambethia"
+    "create": "pg-migrate create",
+    "migrate": "pg-migrate up",
+    "reverse": "pg-migrate down",
+    "prestart": "npm run migrate",
+    "start": "postgraphql $DATABASE_URL --schema ambethia"
   },
   "dependencies": {
+    "node-pg-migrate": "0.0.10",
     "postgraphql": "^1.3.0"
   }
 }
